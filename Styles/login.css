@@ -17,6 +17,7 @@ p{
 }
 
 .div-titulo{
+    background-color: #ffffff;
     color: #7436A5;
     text-align: center;
     padding: 5%;
@@ -60,8 +61,8 @@ p{
     padding: 10px;
     background-color: #7436A5;
     border: 0;
-    border-bottom: 1px solid #fff;
-    color: #fff;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
     font-size: 15px;
     outline: 0;
     cursor: text;
