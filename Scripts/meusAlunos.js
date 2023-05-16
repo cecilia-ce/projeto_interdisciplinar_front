@@ -77,7 +77,7 @@ for (let i = 0; i < 15; i++) {
 }
 
 for(let item of listaAlunos){
-  item.botao = `<i class="fa-solid fa-pen-to-square" onclick="editarAluno(${item.id})"></i>` 
+  item.botao = `<i class="fa-solid fa-pen-to-square btn-editar" onclick="editarAluno(${item.id})"></i>` 
 }
 
 

@@ -135,6 +135,10 @@ hr{
     background-color: #fff;
 }
 
+.btn-editar{
+    cursor: pointer;
+}
+
 .search-input{
     width: 20vw;
     height: 25px;
