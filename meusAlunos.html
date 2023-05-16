@@ -65,6 +65,61 @@
 
     </div>
 
+    <button id="openBtn">Abrir Modal</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <img src="" alt="foto do aluno">
+                <h2>Nome do aluno</h2>
+            </div>
+            <div class="modal-main">
+                <div class="modal-main-info-pessoal">
+                    <label for="modal-inpt-fone">Telefone</label>
+                    <input id="modal-inpt-fone" type="text" class="inpt-modal">
+
+                    <label for="modal-inpt-email">E-mail</label>
+                    <input id="modal-inpt-email" type="text" class="inpt-modal">
+
+                    <label for="modal-inpt-endereco">Endereço</label>
+                    <input id="modal-inpt-endereco" type="text" class="inpt-modal">
+
+                    <label for="modal-inpt-valor">Valor mensal</label>
+                    <input id="modal-inpt-valor" type="text" class="inpt-modal">
+
+                    <label for="modal-inpt-pagamento">Forma de pagamento</label>
+                    <input id="modal-inpt-pagamento" type="text" class="inpt-modal">
+
+                    <label for="modal-inpt-vencimento">Vencimento</label>
+                    <input id="modal-inpt-vencimento" type="text" class="inpt-modal">
+                </div>     
+                <div class="modal-main-info-aula">
+                    <label for="modal-inpt-aprendizagem">Aprendizagem</label>
+                    <input id="modal-inpt-aprendizagem" type="text" class="inpt-modal-aula" disabled="true">
+
+                    <label for="modal-inpt-horario">Horário das aulas</label>
+                    <input id="modal-inpt-horario" type="text" class="inpt-modal-aula" disabled="true">
+                    
+                    <div class="div-agendar-modal">
+                        <label>Agendar próximas aulas</label>
+                        <input id="modal-inpt-data" type="date" class="inpt-modal-aula">
+                        <input id="modal-inpt-hora" type="time" class="inpt-modal-aula">
+                        <select id="modal-inpt-repeticao" class="inpt-modal-aula">
+                            <option value="diáriamente"></option>
+                            <option value="semanalmente"></option>
+                            <option value="mensalmente"></option>
+                        </select>                        
+                    </div>
+                    <textarea id="info-adicionais-modal">
+                        
+                    </textarea>
+
+                </div>   
+
+            </div>
+        </div>
+    </div>
 
 
 <script src="Scripts/meusAlunos.js"></script>

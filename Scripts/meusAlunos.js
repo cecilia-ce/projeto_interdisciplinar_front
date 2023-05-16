@@ -92,3 +92,18 @@ function editarAluno(alunoId){
   let modal = $("<div>").addClass("modal-overlay")
   modal.append("<p>").text("Conteúdo do modal")
 }
+
+
+
+
+$(document).ready(function() {
+  // Abrir o modal ao clicar no botão
+  $("#openBtn").click(function() {
+      $("#myModal").css("display", "block");
+  });
+
+  // Fechar o modal ao clicar no botão de fechar
+  $(".close").click(function() {
+      $("#myModal").css("display", "none");
+  });
+});
