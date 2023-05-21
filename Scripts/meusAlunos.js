@@ -60,7 +60,7 @@ function gerarStringAleatoria(tamanho) {
 let listaAlunos = [];
 
 // Preencher a lista de Alunos com 30 objetos
-for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 9; i++) {
   let id = gerarNumeroAleatorio(0, 500)
   let nomePessoal = gerarStringAleatoria(8); 
   let email = gerarStringAleatoria(6) + '@example.com'; 
@@ -88,22 +88,38 @@ $('#table').bootstrapTable({
 
 
 function editarAluno(alunoId){
-  alert("Abrir modal do aluno" + alunoId)
-  let modal = $("<div>").addClass("modal-overlay")
-  modal.append("<p>").text("Conteúdo do modal")
+  // alert("Abrir modal do aluno" + alunoId)
+  // let modal = $("<div>").addClass("modal-overlay")
+  // modal.append("<p>").text("Conteúdo do modal")
+  let aluno = listaAlunos.find(a => a.id == alunoId)
+  $("#modal-detalhe").css("display", "block")
+  $("#modal-nome-aluno").text(aluno.nome)
+  $("#modal-inpt-fone").val(aluno.telefone)
+  $("#modal-inpt-email").val(aluno.email)
+  $("#modal-inpt-endereco").val(aluno.endereco)
+  $("#modal-inpt-valor").val(aluno.valorMensal)
+  $("#modal-inpt-pagamento").val(aluno.formaDePagamento)
+  $("#modal-inpt-vencimento").val(aluno.diaVencimento)
+  $("#modal-inpt-aprendizagem").val(aluno.disciplina)
+  $("#modal-inpt-horario").val(aluno.horarioDaAula)
+
 }
 
 
 
 
-$(document).ready(function() {
-  // Abrir o modal ao clicar no botão
-  $("#openBtn").click(function() {
-      $("#myModal").css("display", "block");
-  });
+// $(document).ready(function() {
+//   // Abrir o modal ao clicar no botão
+//   $("#openBtn").click(function() {
+//       $("#modal-detalhe").css("display", "block");
+//   });
 
-  // Fechar o modal ao clicar no botão de fechar
-  $(".close").click(function() {
-      $("#myModal").css("display", "none");
-  });
+//   Fechar o modal ao clicar no botão de fechar
+//   $(".close").click(function() {
+//       $("#modal-detalhe").css("display", "none");
+//   });
+// });
+
+$(".close").click(function() {
+  $("#modal-detalhe").css("display", "none");
 });

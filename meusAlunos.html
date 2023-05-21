@@ -54,7 +54,7 @@
                       <th data-field="nome" data-sortable="true">Nome</th>
                       <th data-field="email" data-sortable="true">E-mail</th>
                       <th data-field="telefone" data-sortable="true">Telefone</th>
-                      <th data-field="botao" data-sortable="true">Editar</th>
+                      <th data-field="botao" data-sortable="true">Detalhar</th>
                     </tr>
                     </thead>
                   </table>
@@ -65,14 +65,14 @@
 
     </div>
 
-    <button id="openBtn">Abrir Modal</button>
 
-    <div id="myModal" class="modal">
+    <!-- MODAL: Detalhar aluno -->
+
+    <div id="modal-detalhe" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-header">
-                <img src="" alt="foto do aluno">
-                <h2>Nome do aluno</h2>
+                <h2 id="modal-nome-aluno">Nome do aluno</h2>
             </div>
             <div class="modal-main">
                 <div class="modal-main-info-pessoal">
@@ -111,9 +111,11 @@
                             <option value="mensalmente"></option>
                         </select>                        
                     </div>
-                    <textarea id="info-adicionais-modal">
-                        
-                    </textarea>
+                    <textarea id="info-adicionais-modal"></textarea>
+                    <div>
+                        <button id="gerar-contrato" class="btn-principal">Gerar contrato</button>
+                        <button id="desenpenho" class="btn-principal">Acompanhar desenpenho</button>
+                    </div>
 
                 </div>   
 
