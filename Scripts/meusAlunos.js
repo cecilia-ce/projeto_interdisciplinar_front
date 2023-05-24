@@ -77,7 +77,7 @@ for (let i = 0; i < 9; i++) {
 }
 
 for(let item of listaAlunos){
-  item.botao = `<i class="fa-solid fa-pen-to-square btn-editar" onclick="editarAluno(${item.id})"></i>` 
+  item.botao = `<i class="fa-solid fa-pen-to-square btn-editar" onclick="detalharAluno(${item.id})"></i>` 
 }
 
 
@@ -86,22 +86,37 @@ $('#table').bootstrapTable({
 });
 //#endregionendregion
 
+let aluno;
+function detalharAluno(alunoId){
 
-function editarAluno(alunoId){
-  // alert("Abrir modal do aluno" + alunoId)
-  // let modal = $("<div>").addClass("modal-overlay")
-  // modal.append("<p>").text("Conteúdo do modal")
-  let aluno = listaAlunos.find(a => a.id == alunoId)
+  btnContratoEVoltar = $("#gerar-contrato").text();
+  btnDesempenhoESalvar = $("#desempenho").text();
+
+  aluno = listaAlunos.find(a => a.id == alunoId)
   $("#modal-detalhe").css("display", "block")
   $("#modal-nome-aluno").text(aluno.nome)
-  $("#modal-inpt-fone").val(aluno.telefone)
-  $("#modal-inpt-email").val(aluno.email)
-  $("#modal-inpt-endereco").val(aluno.endereco)
-  $("#modal-inpt-valor").val(aluno.valorMensal)
-  $("#modal-inpt-pagamento").val(aluno.formaDePagamento)
-  $("#modal-inpt-vencimento").val(aluno.diaVencimento)
-  $("#modal-inpt-aprendizagem").val(aluno.disciplina)
-  $("#modal-inpt-horario").val(aluno.horarioDaAula)
+  $("#modal-inpt-fone").val(aluno.telefone).prop('disabled', true)
+  $("#modal-inpt-email").val(aluno.email).prop('disabled', true)
+  $("#modal-inpt-endereco").val(aluno.endereco).prop('disabled', true)
+  $("#modal-inpt-valor").val(aluno.valorMensal).prop('disabled', true)
+  $("#modal-inpt-pagamento").val(aluno.formaDePagamento).prop('disabled', true)
+  $("#modal-inpt-vencimento").val(aluno.diaVencimento).prop('disabled', true)
+  $("#modal-inpt-aprendizagem").val(aluno.disciplina).prop('disabled', true)
+  $("#modal-inpt-horario").val(aluno.horarioDaAula).prop('disabled', true)
+  $("#modal-inpt-data").prop('disabled', true)
+  $("#modal-inpt-hora").prop('disabled', true)
+  $("#modal-inpt-repeticao").prop('disabled', true)
+  $("#info-adicionais-modal").prop('disabled', true)
+
+  if( btnContratoEVoltar === 'Voltar'){
+    $("#gerar-contrato").text('Gerar contrato')
+    $("#gerar-contrato").attr('onclick', 'gerarContrato()')
+  }
+
+  if( btnDesempenhoESalvar === 'Salvar'){
+    $("#desempenho").text('Acompanhar desempenho')
+    $("#desempenho").attr('onclick', 'abrirDesempenho()')
+  }
 
 }
 
@@ -120,6 +135,64 @@ function editarAluno(alunoId){
 //   });
 // });
 
+let btnContratoEVoltar = $("#gerar-contrato").text();
+let btnDesempenhoESalvar = $("#desempenho").text();
+
 $(".close").click(function() {
   $("#modal-detalhe").css("display", "none");
 });
+
+
+$("#editar").click(function(){
+  console.log("pegou") 
+  editarAluno(aluno.id)
+})
+
+function editarAluno(alunoId){
+
+  btnContratoEVoltar = $("#gerar-contrato").text();
+  btnDesempenhoESalvar = $("#desempenho").text();
+  
+  $("#modal-inpt-fone").prop('disabled', false)
+  $("#modal-inpt-email").prop('disabled', false)
+  $("#modal-inpt-endereco").prop('disabled', false)
+  $("#modal-inpt-valor").prop('disabled', false)
+  $("#modal-inpt-pagamento").prop('disabled', false)
+  $("#modal-inpt-vencimento").prop('disabled', false)
+  $("#modal-inpt-aprendizagem").prop('disabled', false)
+  $("#modal-inpt-horario").prop('disabled', false)
+  $("#modal-inpt-data").prop('disabled', false)
+  $("#modal-inpt-hora").prop('disabled', false)
+  $("#modal-inpt-repeticao").prop('disabled', false)
+  $("#info-adicionais-modal").prop('disabled', false)
+
+  if( btnContratoEVoltar === 'Gerar contrato'){
+    $("#gerar-contrato").text('Voltar')
+    $("#gerar-contrato").attr('onclick', `voltar(${alunoId})`)
+  }
+
+  if( btnDesempenhoESalvar === 'Acompanhar desempenho'){
+    $("#desempenho").text('Salvar')
+    $("#desempenho").attr('onclick', `salvarEdicao(${alunoId})`)
+  }
+
+
+}
+
+
+function voltar(alunoId){
+  detalharAluno(alunoId)
+}
+
+
+
+function gerarContrato(){
+  alert("Contrato gerado com sucesso!")
+}
+
+
+function salvarEdicao(alunoId){
+  detalharAluno(alunoId)
+  alert("Salvo com sucesso")
+  
+}

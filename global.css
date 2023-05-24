@@ -91,3 +91,16 @@ button{
     background-color: aliceblue;
     margin-right: 15px;
 }
+
+
+.btn-princ{
+    padding-bottom: 20px;
+    padding-top: 10px;
+    height: 35px;
+    width: 20vw;
+    background-color: #7436A5;
+    color: #FF9D0A;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+}

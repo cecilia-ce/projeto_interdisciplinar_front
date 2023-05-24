@@ -20,6 +20,8 @@ p{
     color: #7436A5;
     text-align: center;
     padding: 5%;
+    background-color: #ffff;
+
 }
 
 .div-titulo h1{
@@ -60,12 +62,12 @@ p{
     padding: 10px;
     background-color: #7436A5;
     border: 0;
-    border-bottom: 1px solid #fff;
-    color: #fff;
+    border-bottom: 1px solid #ffff;
+    color: #ffff;
     font-size: 15px;
     outline: 0;
     cursor: text;
-
+    
 }
 
 .input-form:focus::placeholder{
@@ -90,7 +92,7 @@ p{
 
 .btn-cadastrar:hover{
     background-color: #ff8513;
-    border-color: #fff;
+    border-color: #ffff;
     transition: all 0.2s ease-in-out;
 }
 

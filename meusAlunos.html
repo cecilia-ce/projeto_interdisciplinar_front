@@ -72,49 +72,69 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-header">
+                <i id="editar" class="fa-solid fa-pen-to-square modal-btn-editar" title="Editar"></i>
+                
                 <h2 id="modal-nome-aluno">Nome do aluno</h2>
             </div>
             <div class="modal-main">
                 <div class="modal-main-info-pessoal">
-                    <label for="modal-inpt-fone">Telefone</label>
-                    <input id="modal-inpt-fone" type="text" class="inpt-modal">
-
-                    <label for="modal-inpt-email">E-mail</label>
-                    <input id="modal-inpt-email" type="text" class="inpt-modal">
-
-                    <label for="modal-inpt-endereco">Endereço</label>
-                    <input id="modal-inpt-endereco" type="text" class="inpt-modal">
-
-                    <label for="modal-inpt-valor">Valor mensal</label>
-                    <input id="modal-inpt-valor" type="text" class="inpt-modal">
-
-                    <label for="modal-inpt-pagamento">Forma de pagamento</label>
-                    <input id="modal-inpt-pagamento" type="text" class="inpt-modal">
-
-                    <label for="modal-inpt-vencimento">Vencimento</label>
-                    <input id="modal-inpt-vencimento" type="text" class="inpt-modal">
+                    <div class="modal-main-info-inpt-div">
+                        <label for="modal-inpt-fone">Telefone</label>
+                        <input id="modal-inpt-fone" type="text" class="inpt-modal" disabled="true">
+                    </div>
+                    <div class="modal-main-info-inpt-div">
+                        <label for="modal-inpt-email">E-mail</label>
+                        <input id="modal-inpt-email" type="text" class="inpt-modal" disabled="true">
+                    </div>
+                    <div class="modal-main-info-inpt-div">
+                        <label for="modal-inpt-endereco">Endereço</label>
+                        <input id="modal-inpt-endereco" type="text" class="inpt-modal" disabled="true">
+                    </div>
+                    <div class="modal-main-info-inpt-div">
+                        <label for="modal-inpt-valor">Valor mensal</label>
+                        <input id="modal-inpt-valor" type="text" class="inpt-modal" disabled="true">
+                    </div>
+                    <div class="modal-main-info-inpt-div">
+                        <label for="modal-inpt-pagamento">Forma de pagamento</label>
+                        <input id="modal-inpt-pagamento" type="text" class="inpt-modal" disabled="true">
+                    </div>
+                    <div class="modal-main-info-inpt-div">
+                        <label for="modal-inpt-vencimento">Vencimento</label>
+                        <input id="modal-inpt-vencimento" type="text" class="inpt-modal" disabled="true">
+                    </div>
                 </div>     
                 <div class="modal-main-info-aula">
-                    <label for="modal-inpt-aprendizagem">Aprendizagem</label>
-                    <input id="modal-inpt-aprendizagem" type="text" class="inpt-modal-aula" disabled="true">
-
-                    <label for="modal-inpt-horario">Horário das aulas</label>
-                    <input id="modal-inpt-horario" type="text" class="inpt-modal-aula" disabled="true">
-                    
-                    <div class="div-agendar-modal">
-                        <label>Agendar próximas aulas</label>
-                        <input id="modal-inpt-data" type="date" class="inpt-modal-aula">
-                        <input id="modal-inpt-hora" type="time" class="inpt-modal-aula">
-                        <select id="modal-inpt-repeticao" class="inpt-modal-aula">
-                            <option value="diáriamente"></option>
-                            <option value="semanalmente"></option>
-                            <option value="mensalmente"></option>
-                        </select>                        
+                    <div class="modal-main-info-inpt-div">
+                        <label for="modal-inpt-aprendizagem">Aprendizagem</label>
+                        <input id="modal-inpt-aprendizagem" type="text" class="inpt-modal-aula" disabled="true">
                     </div>
-                    <textarea id="info-adicionais-modal"></textarea>
-                    <div>
-                        <button id="gerar-contrato" class="btn-principal">Gerar contrato</button>
-                        <button id="desenpenho" class="btn-principal">Acompanhar desenpenho</button>
+
+                    <div class="modal-main-info-inpt-div">
+                        <label for="modal-inpt-horario">Horário das aulas</label>
+                        <input id="modal-inpt-horario" type="text" class="inpt-modal-aula" disabled="true">
+                    </div>
+                    
+                    <div class="modal-main-info-div">
+                        <label>Agendar próximas aulas</label>
+
+                        <div class="modal-main-info-div">
+                            <input id="modal-inpt-data" type="date" class="inpt-modal-aula" disabled="true">
+                            <input id="modal-inpt-hora" type="time" class="inpt-modal-aula" disabled="true">
+                            <select id="modal-inpt-repeticao" class="inpt-modal-aula" disabled="true">
+                                <option value="diáriamente">Diáriamente</option> 
+                                <option value="semanalmente">Semanalmente</option>
+                                <option value="mensalmente">Mensalmente</option>
+                            </select>
+                            <button id="btn-agendar">Agendar</button>                       
+                        </div>
+                    </div>
+                    <div class="modal-main-info-inpt-div">
+                        <label for="info-adicionais-modal">Informações adicionais</label>
+                        <textarea id="info-adicionais-modal" disabled="true"></textarea>
+                    </div>
+                    <div class="modal-btn-div">
+                        <button id="gerar-contrato" class="btn-princ">Gerar contrato</button>
+                        <button id="desempenho" class="btn-princ">Acompanhar desempenho</button>
                     </div>
 
                 </div>   

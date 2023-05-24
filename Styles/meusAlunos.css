@@ -219,13 +219,116 @@ hr{
     height: 15%;
     display: flex;
     align-items: end;
-    justify-content: center;
-    margin: 0 5% 3% 5%;
+    justify-content: start;
+    margin: 0 5% 3% 0%;
     color: #FF9D0A;
     
 }
 
+.modal-btn-editar{
+    font-size: 1.5em;
+    margin-right:30%;
+    color: #F3F3F3;   
+    cursor: pointer; 
+}
+
 .modal-main{
+    display: flex;
+    height: 75%;
+    gap: 5%;
+}
+
+.modal-main-info-pessoal{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.modal-main-info-inpt-div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.inpt-modal-aula{
+    border: none;
+    border-radius: 15px;
+    height: 5vh;
+    padding: 10px;
+    background-color: #F3F3F3;
+}
+.inpt-modal-aula:disabled{
+    background-color: #e7e7e7;
+    color:#a2a2a2
+}
+
+.inpt-modal{
+    border: none;
+    border-radius: 15px;
+    height: 5vh;
+    padding: 10px;
+    background-color: #F3F3F3;
+}
+.inpt-modal:disabled{
+    background-color: #e7e7e7;
+    color:#a2a2a2
+}
+
+#modal-inpt-repeticao{
+    border: none;
+    border-radius: 15px;
+    height: 5vh;
+    width: 40%;
+    padding: 10px;
+    background-color: #F3F3F3;
+    padding: 4px;
+}
+
+#modal-inpt-repeticao:disabled{
+    background-color: #e7e7e7;
+    color:#a2a2a2
+}
+
+.modal-main-info-aula{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 55%;
+    height: 100%;
+}
+
+
+.modal-main-agendar-div{
     display: flex;
 }
 
+#info-adicionais-modal{
+    resize: none;
+    height: 15vh;
+    border: none;
+    border-radius: 15px;
+    background-color: #F3F3F3;
+    padding: 10px;
+}
+#info-adicionais-modal:disabled{
+    background-color: #e7e7e7;
+    color:#a2a2a2
+    
+}
+
+.modal-btn-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn-agendar{
+    background-color: #7436A5;
+    color: #FF9D0A;
+    border: none;
+    border-radius: 15px;
+    height: 5vh;
+    width: 5vw;
+    
+}
