@@ -1,5 +1,5 @@
 
-//tabela de alunos --bootstrap
+// tabela de alunos --bootstrap
 let $table = $('#table')
 let $remove = $('#remove')
 let $divSearchTable = $('.fixed-table-toolbar')
@@ -23,8 +23,7 @@ $(function() {
 })
 
 
-
-//region "Mock-Alunos"
+// "Mock-Alunos"
 class Aluno {
   constructor(id, nome, email, telefone, endereco, valorMensal, formaDePagamento, diaVencimento, disciplina, horarioDaAula, infoAdicional) {
     this.id = id;
@@ -59,7 +58,7 @@ function gerarStringAleatoria(tamanho) {
 // Lista de Alunos
 let listaAlunos = [];
 
-// Preencher a lista de Alunos com 30 objetos
+// Preencher a lista de Alunos
 for (let i = 0; i < 9; i++) {
   let id = gerarNumeroAleatorio(0, 500)
   let nomePessoal = gerarStringAleatoria(8); 
@@ -86,7 +85,11 @@ $('#table').bootstrapTable({
 });
 //#endregionendregion
 
+
 let aluno;
+let btnContratoEVoltar = $("#gerar-contrato").text();
+let btnDesempenhoESalvar = $("#desempenho").text();
+
 function detalharAluno(alunoId){
 
   btnContratoEVoltar = $("#gerar-contrato").text();
@@ -95,6 +98,7 @@ function detalharAluno(alunoId){
   aluno = listaAlunos.find(a => a.id == alunoId)
   $("#modal-detalhe").css("display", "block")
   $("#modal-nome-aluno").text(aluno.nome)
+  $("#modal-inpt-nome").val(aluno.nome).prop('disabled', true)
   $("#modal-inpt-fone").val(aluno.telefone).prop('disabled', true)
   $("#modal-inpt-email").val(aluno.email).prop('disabled', true)
   $("#modal-inpt-endereco").val(aluno.endereco).prop('disabled', true)
@@ -121,38 +125,25 @@ function detalharAluno(alunoId){
 }
 
 
+function recarregarTabela(){
+  
+  $('#table').bootstrapTable('removeAll');
+  $('#table').bootstrapTable('append', listaAlunos);
+  
+}
 
-
-// $(document).ready(function() {
-//   // Abrir o modal ao clicar no botão
-//   $("#openBtn").click(function() {
-//       $("#modal-detalhe").css("display", "block");
-//   });
-
-//   Fechar o modal ao clicar no botão de fechar
-//   $(".close").click(function() {
-//       $("#modal-detalhe").css("display", "none");
-//   });
-// });
-
-let btnContratoEVoltar = $("#gerar-contrato").text();
-let btnDesempenhoESalvar = $("#desempenho").text();
 
 $(".close").click(function() {
   $("#modal-detalhe").css("display", "none");
+  recarregarTabela()
 });
 
-
-$("#editar").click(function(){
-  console.log("pegou") 
-  editarAluno(aluno.id)
-})
 
 function editarAluno(alunoId){
 
   btnContratoEVoltar = $("#gerar-contrato").text();
   btnDesempenhoESalvar = $("#desempenho").text();
-  
+  $("#modal-inpt-nome").prop('disabled', false)
   $("#modal-inpt-fone").prop('disabled', false)
   $("#modal-inpt-email").prop('disabled', false)
   $("#modal-inpt-endereco").prop('disabled', false)
@@ -176,14 +167,16 @@ function editarAluno(alunoId){
     $("#desempenho").attr('onclick', `salvarEdicao(${alunoId})`)
   }
 
-
 }
+
+$("#editar").click(function(){
+  editarAluno(aluno.id)
+})
 
 
 function voltar(alunoId){
   detalharAluno(alunoId)
 }
-
 
 
 function gerarContrato(){
@@ -192,7 +185,24 @@ function gerarContrato(){
 
 
 function salvarEdicao(alunoId){
+
+  for(let a of listaAlunos){
+    if(a.id === aluno.id){
+      a.nome = $("#modal-inpt-nome").val()
+      a.email = $("#modal-inpt-email").val()
+      a.telefone = $("#modal-inpt-fone").val()
+      a.endereco = $("#modal-inpt-endereco").val()
+      a.valorMensal = $("#modal-inpt-valor").val()
+      a.formaDePagamento = $("#modal-inpt-pagamento").val()
+      a.diaVencimento = $("#modal-inpt-vencimento").val()
+      a.disciplina = $("#modal-inpt-aprendizagem").val()
+      a.horarioDaAula = $("#modal-inpt-horario").val()
+      a.infoAdicional = $("#info-adicionais-modal").val()
+    }
+  }
+  
   detalharAluno(alunoId)
   alert("Salvo com sucesso")
-  
 }
+
+
