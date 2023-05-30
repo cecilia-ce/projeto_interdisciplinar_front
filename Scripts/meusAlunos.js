@@ -139,6 +139,9 @@ $(".close").click(function() {
 });
 
 
+
+
+
 function editarAluno(alunoId){
 
   btnContratoEVoltar = $("#gerar-contrato").text();
@@ -205,4 +208,8 @@ function salvarEdicao(alunoId){
   alert("Salvo com sucesso")
 }
 
+
+function cadastrarAluno(){
+  $("#modal-cadastro").css("display", "block")
+}
 

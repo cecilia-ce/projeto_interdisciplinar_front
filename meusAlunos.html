@@ -37,7 +37,7 @@
             </div>
             <main class="main">
                 <div id="div-add-aluno">   
-                    <button id="add-aluno-btn" class="btn-principal">Adicionar aluno</button>
+                    <button id="add-aluno-btn" class="btn-principal" onclick="cadastrarAluno()">Adicionar aluno</button>
                 </div>
                 <div class="tabela-alunos-div">
                   <button id="remove" class="btn btn-danger" disabled>Excluir</button>
@@ -79,7 +79,7 @@
             <div class="modal-main">
                 <div class="modal-main-info-pessoal">
                     <div class="modal-main-info-inpt-div">
-                        <label for="modal-inpt-fone">Nome</label>
+                        <label for="modal-inpt-nome">Nome</label>
                         <input id="modal-inpt-nome" type="text" class="inpt-modal" disabled="true">
                     </div>
                     <div class="modal-main-info-inpt-div">
@@ -144,6 +144,104 @@
                 </div>   
 
             </div>
+        </div>
+    </div>
+
+    <!-- Modal: Cadastrar Aluno -->
+
+    <div id="modal-cadastro" class="modal">
+        <div class="modal-cad-content">
+            <div class="modal-cad-header">
+                <h2 id="modal-titulo-cadastro">Cadastrar Aluno</h2>
+                <span id="close-cadastro" class="close">&times;</span>
+            </div>
+
+            <div class="modal-cadasto-main">
+                <div class="modal-cadastro">
+                    <div class="modal-cad-inpt-div">
+                        <label for="modal-cad-inpt-nome">Nome completo</label>
+                        <input id="modal-cad-inpt-nome" type="text" class="inpt-modal-text">
+                    </div>
+                    <div class="modal-cad-inpt-div">
+                        <label for="modal-cad-inpt-nasci">Data de Nascimento</label>
+                        <input id="modal-cad-inpt-nasci" type="date" class="inpt-modal">
+                    </div>
+                </div>
+
+                <div class="modal-cad-inpt-div">
+                    <label for="modal-inpt-endereco">Endereço</label>
+                    <input id="modal-inpt-endereco" type="text" class="inpt-modal">
+                </div>
+
+                <div class="modal-cadastro">
+                    <div class="modal-cad-inpt-div">
+                        <label for="modal-cad-inpt-email">Email</label>
+                        <input id="modal-cad-inpt-email" type="text" class="inpt-modal-text">
+                    </div>
+                    <div class="modal-cad-inpt-div">
+                        <label for="modal-cad-inpt-fone">Celular</label>
+                        <input id="modal-cad-inpt-fone" type="text" class="inpt-modal">
+                    </div>
+                </div>
+
+                <div class="modal-cad-responsavel-div">
+                    <div class="title-reponsavel">
+                        <strong>Responsável</strong>
+                    </div>
+                    <div class="modal-cadastro">
+                        <div class="modal-cad-inpt-div">
+                            <label for="modal-resp-inpt-nome">Nome completo</label>
+                            <input id="modal-resp-inpt-nome" type="text" class="inpt-modal-text">
+                        </div>
+                        <div class="modal-cad-inpt-div">
+                            <label for="modal-resp-inpt-parente">Parentesco</label>
+                            <input id="modal-resp-inpt-parente" type="text" class="inpt-modal">
+                        </div>
+                    </div>
+                    <div class="modal-cad-inpt-div">
+                        <label for="modal-resp-endereco">Endereço</label>
+                        <input id="modal-resp-endereco" type="text" class="inpt-modal">
+                    </div>
+                    <div class="modal-cadastro">
+                        <div class="modal-cad-inpt-div">
+                            <label for="modal-resp-inpt-email">Email</label>
+                            <input id="modal-resp-inpt-email" type="text" class="inpt-modal-text">
+                        </div>
+                        <div class="modal-cad-inpt-div">
+                            <label for="modal-resp-inpt-fone">Celular</label>
+                            <input id="modal-resp-inpt-fone" type="text" class="inpt-modal">
+                        </div>
+                    </div>
+                </div>
+
+                <label for="inpt-disciplina">Aprendizagem</label>
+                <input id="inpt-disciplina" type="text" class="inpt-modal">
+
+                <div class="modal-cad-aulas-div">
+                    <p>Quantidade de aulas por semana</p>
+                    <div class="div-cad-inpt-horario-aulas">
+                        <select name="aulas-horarios" id="horario-das-aulas" class="inpt-modal">
+                            <option value="segunda">Segunda</option>
+                            <option value="terca">Terça</option>
+                            <option value="quarta">Quarta</option>
+                            <option value="quinta">Quinta</option>
+                            <option value="sexta">Sexta</option>
+                            <option value="sabado">Sábado</option>
+                            <option value="domingo">Domingo</option>
+                        </select>
+
+                        <input type="time" name="hora-aula-inpt" id="hora-aula-inpt" class="inpt-modal">
+
+                        <input type="text" name="duracao-min" id="duracao-inpt" class="inpt-modal" placeholder="Duração em minutos">
+
+                        <button id="btn-add" class="btn-modal-remv-add">Adicionar</button>
+                        <button id="btn-excluir" class="btn-modal-remv-add">Remover</button>
+                        
+                    </div>
+
+                </div>
+
+            </div> 
         </div>
     </div>
 

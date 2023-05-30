@@ -332,3 +332,126 @@ hr{
     width: 5vw;
     
 }
+
+
+/* modal de cadastro de aluno */
+
+.modal-cad-content{
+    background-color: #ffffff;
+    margin: 3% auto;
+    /* padding: 20px; */
+    border: 1px solid #888;
+    width: 90%;
+    height: 90%;
+    overflow: auto; 
+    border-radius: 15px;
+}
+
+.modal-cad-header{
+    
+    height: 15%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    color: #FF9D0A;
+    background-color: #7436A5;
+}
+
+#close-cadastro, #modal-titulo-cadastro{
+
+    margin: 20px;
+   
+}
+
+
+.modal-cadasto-main{
+    margin: 20px;
+    overflow: auto;
+    height: 75%;
+    
+}
+
+.modal-cadastro{
+    width: 100%;
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.modal-cad-inpt-div{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.inpt-modal-text{
+    border: none;
+    border-radius: 15px;
+    width: 54vw;
+    height: 5vh;
+    padding: 10px;
+    background-color: #F3F3F3;
+}
+.inpt-modal-text:disabled{
+    background-color: #e7e7e7;
+    color:#a2a2a2
+}
+
+#modal-inpt-endereco{
+    width: 100%;
+}
+
+#modal-cad-inpt-nasci, #modal-cad-inpt-fone{
+    width: 30vw;
+} 
+
+
+.modal-cad-responsavel-div{
+    display: flex;
+    flex-direction: column;
+    border: solid 1px rgb(170, 170, 170);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#modal-resp-inpt-parente, #modal-resp-inpt-fone{
+    width: 25vw;
+}
+
+.title-reponsavel{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#inpt-disciplina{
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#horario-das-aulas{
+    border: none;
+    border-radius: 15px;
+    height: 5vh;
+    width: 20%;
+    padding: 10px;
+    background-color: #F3F3F3;
+    padding: 4px;
+}
+
+.btn-modal-remv-add{
+    padding-bottom: 20px;
+    padding-top: 10px;
+    height: 35px;
+    width: 10vw;
+    background-color: #7436A5;
+    color: #FF9D0A;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+    
+}
