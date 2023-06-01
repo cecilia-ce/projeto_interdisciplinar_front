@@ -65,6 +65,8 @@ hr{
     margin-right: 15px;
 }
 
+
+
 .header{
     color: #7436A5;
     font-family: 'Roboto', sans-serif;
@@ -409,7 +411,7 @@ hr{
 
 
 .modal-cad-responsavel-div{
-    display: flex;
+    display: none;
     flex-direction: column;
     border: solid 1px rgb(170, 170, 170);
     border-radius: 15px;
@@ -455,3 +457,46 @@ hr{
     font-weight: 600;
     
 }
+
+.div-cad-inpt-horario-aulas{
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+}
+
+#dia-das-aulas{
+    padding: 2px;
+    width: 10vw;
+}
+
+#dia-das-aulas::placeholder{
+    margin-left: 5px;
+}
+
+.lista-aulas-cadastro{
+    width: 30vw;
+}
+
+#info-add-cadastro{
+    resize: none;
+    height: 15vh;
+    border: none;
+    border-radius: 15px;
+    background-color: #F3F3F3;
+    padding: 10px;
+    margin-right: 5px;
+
+}
+
+.div-cadastrar-btn{
+    display: flex;
+    justify-content: end;
+    margin: 5px;
+
+}
+
+
+.modal-cad-aulas-div{
+    margin-bottom: 15px;
+}
+

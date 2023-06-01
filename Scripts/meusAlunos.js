@@ -126,7 +126,9 @@ function detalharAluno(alunoId){
 
 
 function recarregarTabela(){
-  
+  for(let item of listaAlunos){
+    item.botao = `<i class="fa-solid fa-pen-to-square btn-editar" onclick="detalharAluno(${item.id})"></i>` 
+  }  
   $('#table').bootstrapTable('removeAll');
   $('#table').bootstrapTable('append', listaAlunos);
   
@@ -213,3 +215,116 @@ function cadastrarAluno(){
   $("#modal-cadastro").css("display", "block")
 }
 
+
+
+//ADICIONANDO QNT DE AULAS POR SEMANA NO CADASTRO
+
+var aulasPorSemana = [];
+
+function adicionar() {
+    
+  
+  var dia = document.getElementById('dia-das-aulas').value;
+  var hora = document.getElementById('hora-aula-inpt').value;
+  var duracao = document.getElementById('duracao-inpt').value;
+
+  var aula = {
+      dia: dia,
+      hora: hora,
+      duracao: duracao
+  };
+
+  aulasPorSemana.push(aula);
+  exibirLista();
+}
+
+function remover() {
+  aulasPorSemana.pop();
+   exibirLista();
+}
+
+function exibirLista() {
+  var listaItens = document.getElementById('lista-itens');
+  listaItens.innerHTML = '';
+
+  aulasPorSemana.forEach(function (objeto) {
+    var item = document.createElement('div');
+    item.classList.add('lista-aulas-cadastro');
+    item.innerHTML = objeto.dia + ' - ' + objeto.hora + ' - ' + objeto.duracao + ' horas';
+    listaItens.appendChild(item);
+  });
+  
+}
+
+
+function closeCadastro(){
+  $("#modal-cadastro").css("display", "none");
+  recarregarTabela()
+}
+
+function verificarIdade(){
+  let inptDataNascimento = $("#modal-cad-inpt-nasci").val()
+  let dataNascimento = new Date(inptDataNascimento)
+  let dataAtual = new Date()
+  let idade = dataAtual.getFullYear() - dataNascimento.getFullYear()
+
+  if(idade < 18){
+    mostrarResponsavel()
+  }else{
+    $('.modal-cad-responsavel-div').css('display', 'none');
+  }
+
+}
+
+function mostrarResponsavel(){
+  $('.modal-cad-responsavel-div').css('display', 'flex');
+}
+
+
+function cadastrar(){
+
+  let nomeCompleto = $("#modal-cad-inpt-nome").val();
+  let dataNascimento = $("#modal-cad-inpt-nasci").val();
+  let endereco = $("#modal-inpt-endereco-cad").val();
+  let email = $("#modal-cad-inpt-email").val();
+  let celular = $("#modal-cad-inpt-fone").val();
+  let displayResponsavel = $('.modal-cad-responsavel-div').css('display');
+  let valorCad = $("#valor-cad").val();
+  let vencimentoCad = $("#vencimento-cad").val();
+  let formaPagamentoCad = $("#forma-pagamento-cad").val();
+  let disciplinaCad = $("#inpt-disciplina").val();
+  let horarioAula = "";
+  for(let aula of aulasPorSemana){
+    horarioAula += `${aula.dia} às ${aula.hora} |`
+  }
+  let infoAddCad = $("#info-add-cadastro").val();
+  let idCad = gerarNumeroAleatorio(1,100);
+
+  // if(displayResponsavel === 'flex'){
+  //   let nomeResponsavel = $("#modal-resp-inpt-nome").val();
+  //   let parentesco = $("#modal-resp-inpt-parente").val();
+  //   let enderecoResponsavel = $("#modal-resp-endereco").val();
+  //   let emailResponsavel = $("#modal-resp-inpt-email").val();
+  //   let celularResponsavel = $("#modal-resp-inpt-fone").val();
+  // }
+
+  let objAluno = new Aluno(
+    idCad,
+    nomeCompleto,
+    email,
+    celular,
+    endereco,
+    valorCad,
+    formaPagamentoCad,
+    vencimentoCad,
+    disciplinaCad,
+    horarioAula,
+    infoAddCad
+    )
+    console.log(objAluno)
+    listaAlunos.push(objAluno)
+
+    alert("Aluno Cadastrado com sucesso!")
+    closeCadastro()
+
+}

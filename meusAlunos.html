@@ -20,7 +20,9 @@
 
         <nav class="menu" onclick="colapse()">
             <div class="nav-header">
-                <div id="logo" class="logo"></div>
+                <div id="logo" class="logo">
+                    <img class="img-logo" src="/Imagens/logo_planeprof.png" alt="logo da planeprof">
+                </div>
                 <h3>PlaneProf</h3>
             </div>
            
@@ -153,7 +155,7 @@
         <div class="modal-cad-content">
             <div class="modal-cad-header">
                 <h2 id="modal-titulo-cadastro">Cadastrar Aluno</h2>
-                <span id="close-cadastro" class="close">&times;</span>
+                <span id="close-cadastro" class="close" onclick="closeCadastro()">&times;</span>
             </div>
 
             <div class="modal-cadasto-main">
@@ -164,13 +166,13 @@
                     </div>
                     <div class="modal-cad-inpt-div">
                         <label for="modal-cad-inpt-nasci">Data de Nascimento</label>
-                        <input id="modal-cad-inpt-nasci" type="date" class="inpt-modal">
+                        <input id="modal-cad-inpt-nasci" type="date" class="inpt-modal" onchange="verificarIdade()">
                     </div>
                 </div>
 
                 <div class="modal-cad-inpt-div">
-                    <label for="modal-inpt-endereco">Endereço</label>
-                    <input id="modal-inpt-endereco" type="text" class="inpt-modal">
+                    <label for="modal-inpt-endereco-cad">Endereço</label>
+                    <input id="modal-inpt-endereco-cad" type="text" class="inpt-modal">
                 </div>
 
                 <div class="modal-cadastro">
@@ -220,7 +222,7 @@
                 <div class="modal-cad-aulas-div">
                     <p>Quantidade de aulas por semana</p>
                     <div class="div-cad-inpt-horario-aulas">
-                        <select name="aulas-horarios" id="horario-das-aulas" class="inpt-modal">
+                        <select name="aulas-horarios" id="dia-das-aulas" class="inpt-modal">
                             <option value="segunda">Segunda</option>
                             <option value="terca">Terça</option>
                             <option value="quarta">Quarta</option>
@@ -232,13 +234,42 @@
 
                         <input type="time" name="hora-aula-inpt" id="hora-aula-inpt" class="inpt-modal">
 
-                        <input type="text" name="duracao-min" id="duracao-inpt" class="inpt-modal" placeholder="Duração em minutos">
+                        <input type="number" name="duracao-min" id="duracao-inpt" class="inpt-modal" placeholder="Duração em horas">
 
-                        <button id="btn-add" class="btn-modal-remv-add">Adicionar</button>
-                        <button id="btn-excluir" class="btn-modal-remv-add">Remover</button>
-                        
+                        <button id="btn-add" class="btn-modal-remv-add" onclick="adicionar()">Adicionar</button>
+                        <button id="btn-excluir" class="btn-modal-remv-add" onclick="remover()">Remover</button>   
+                    </div>
+                    <div id="lista-itens" class="lista-itens-div">
+
+                    </div>
+                </div>
+
+                <div class="modal-cad-inpt-div">
+                
+                    <div class="div-cad-inpt-horario-aulas">
+                        <div class="modal-cad-inpt-div">
+                            <label for="valor-cad">Valor cobrado por mês</label>
+                            <input type="text" id="valor-cad" class="inpt-modal" placeholder="R$ 000,00">
+                        </div>
+                        <div class="modal-cad-inpt-div">
+                            <label for="vencimento-cad">Dia do vencimento</label>
+                            <input type="number" id="vencimento-cad" class="inpt-modal" placeholder="Ex.: 10">
+                        </div>
+                        <div class="modal-cad-inpt-div">
+                            <label for="forma-pagamento-cad">Forma de pagamento</label>
+                            <input type="text" id="forma-pagamento-cad" class="inpt-modal" placeholder="Ex:pix,boleto...">
+                        </div>
                     </div>
 
+                </div>
+
+
+                <div class="modal-cad-inpt-div">
+                    <label for="info-add-cadastro">Informações adicionais</label>
+                    <textarea id="info-add-cadastro"></textarea>
+                </div>
+                <div class="div-cadastrar-btn">
+                    <button id="btn-cadastrar" class="btn-princ" onclick="cadastrar()">Cadastrar</button>
                 </div>
 
             </div> 
